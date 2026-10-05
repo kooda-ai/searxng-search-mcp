@@ -1,0 +1,6 @@
+node_modules/
+dist/
+
+# Internal planning artifacts, kept local-only
+PLAN.md
+.plan-research/

@@ -1,0 +1,7 @@
+use_default_settings: true
+server:
+  secret_key: "searxng-search-mcp-dev-instance-change-me"
+search:
+  formats:
+    - html
+    - json

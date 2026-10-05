@@ -1,0 +1,53 @@
+{
+  "name": "searxng-search-mcp",
+  "version": "0.1.0",
+  "description": "MCP server exposing SearXNG web search and search suggestions",
+  "license": "MIT",
+  "author": "KoodaAI <info@kooda.ai>",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "searxng-search-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "mcpName": "io.github.kooda-ai/searxng-search-mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kooda-ai/searxng-search-mcp.git"
+  },
+  "homepage": "https://github.com/kooda-ai/searxng-search-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/kooda-ai/searxng-search-mcp/issues"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "searxng",
+    "search",
+    "model-context-protocol"
+  ],
+  "scripts": {
+    "build": "tsc && shx chmod +x dist/*.js",
+    "prepare": "npm run build",
+    "test": "vitest run",
+    "test:e2e": "npm run build && vitest run test/e2e.test.ts",
+    "test:integration": "vitest run test/integration.test.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.3.1",
+    "zod": "^4.2.0"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "^2.3.1",
+    "@types/node": "^24.0.0",
+    "shx": "^0.4.0",
+    "typescript": "^5.9.0",
+    "vitest": "^4.0.0"
+  }
+}
