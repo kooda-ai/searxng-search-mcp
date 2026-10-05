@@ -183,11 +183,13 @@ docker compose up -d
 SEARXNG_INTEGRATION_URL=http://localhost:8888 npm run test:integration
 ```
 
-Smoke-test the server interactively with the [MCP Inspector](https://github.com/modelcontextprotocol/inspector):
+Smoke-test the server with the [MCP Inspector](https://github.com/modelcontextprotocol/inspector). This lists the server's tools (Inspector v2 sanitizes inherited env, so `SEARXNG_URL` must be passed via `-e`):
 
 ```sh
-SEARXNG_URL=http://localhost:8888 npx @modelcontextprotocol/inspector node dist/index.js
+npx -y @modelcontextprotocol/inspector --cli node dist/index.js -e SEARXNG_URL=http://localhost:8888 --method tools/list --format json
 ```
+
+Omit `--method` to open the interactive web UI instead.
 
 ## Publishing
 
