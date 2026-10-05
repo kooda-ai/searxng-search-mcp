@@ -4,3 +4,4 @@ dist/
 # Internal planning artifacts, kept local-only
 PLAN.md
 .plan-research/
+MEMORY.md
